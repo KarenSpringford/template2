@@ -40,6 +40,15 @@ namespace Template2 {
         protected global::System.Web.UI.WebControls.TextBox BudgetTextBox;
         
         /// <summary>
+        /// RangeValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator RangeValidator1;
+        
+        /// <summary>
         /// CancelButton control.
         /// </summary>
         /// <remarks>

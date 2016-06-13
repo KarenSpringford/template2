@@ -15,7 +15,10 @@
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="BudgetTextBox">Budget</label>
-                    <asp:TextBox runat="server" CssClass="form-control" ID="BudgetTextBox" placeholder="Budget" required="true"></asp:TextBox>
+                    <asp:TextBox runat="server" CssClass="form-control" ID="BudgetTextBox" placeholder="Budget ie: 20000" required="true"></asp:TextBox>
+                    <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="Budget 20000 - 50000"
+                        ControlToValidate="BudgetTextBox" MinimumValue="20000" MaximumValue="50000"
+                        Type="Currency" Display="Dynamic" BackColor="Red" ForeColor="White" Font-Size="Large"></asp:RangeValidator>
                 </div>
                 <br />
                 <div class="text-right">

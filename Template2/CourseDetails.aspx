@@ -15,7 +15,10 @@
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="CreditsTextBox">Credits</label>
-                    <asp:TextBox runat="server" CssClass="form-control" ID="CreditsTextBox" placeholder="Avaialble Credits" required="true"></asp:TextBox>
+                    <asp:TextBox runat="server" CssClass="form-control" ID="CreditsTextBox" placeholder="Avaialble Credits 1-5" required="true"></asp:TextBox>
+                    <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="Must be between 1 - 5"
+                        ControlToValidate="CreditsTextBox" MinimumValue="1" MaximumValue="5"
+                        Type="Integer" Display="Dynamic" BackColor="Red" ForeColor="White" Font-Size="Large"></asp:RangeValidator>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="DepartmentIDTextBox">Department ID</label>
