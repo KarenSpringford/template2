@@ -14,7 +14,7 @@
                     </div>
                     <div class="panel-body">
                         <address>
-                            <strong>KiSS Designs</strong><br>
+                            <strong>Contosa University</strong><br>
                             666 Elm Street<br>
                             Alcona ON L3Y5V9<br>
                             <abbr title="Phone">Tel:</abbr>
