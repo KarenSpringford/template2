@@ -11,7 +11,7 @@ using System.Web.ModelBinding;
 
 namespace Template2
 {
-    public partial class StudentDetails : System.Web.UI.Page
+    public partial class CourseDetails : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,33 +20,35 @@ namespace Template2
 
         protected void CancelButton_Click(object sender, EventArgs e)
         {
-            //redirect back to Students page
-            Response.Redirect("~/Students.aspx");
+            //redirect back to Courses page
+            Response.Redirect("~/Courses.aspx");
+
         }
 
         protected void SaveButton_Click(object sender, EventArgs e)
         {
-
             //use EF to connect to the server
             using(DefaultConnection db = new DefaultConnection())
             {
-                //use the Student model to create a new student object and 
+                //use the Course model to create a new course object and 
                 //save a new record
-                Student newStudent = new Student();
+                Course newCourse = new Course();
 
-                //add data to the new Student record
-                newStudent.LastName = LastNameTextBox.Text;
-                newStudent.FirstMidName = FirstNameTextBox.Text;
-                newStudent.EnrollmentDate = Convert.ToDateTime(EnrollmentDateTextBox.Text);
+                //add data to the new Course record
+                newCourse.Title = TitleTextBox.Text;
+                newCourse.Credits = Convert.ToInt32(CreditsTextBox.Text);
+                newCourse.DepartmentID = Convert.ToInt32(DepartmentIDTextBox);
 
-                //use LINQ to ADO.net to add / insert my new Student into the DB
-                db.Students.Add(newStudent);
+                //use LINQ to ADO.net to add / insert my new Course into the DB
+                db.Courses.Add(newCourse);
 
                 //save our changes
                 db.SaveChanges();
 
                 //redirect back to the updated Students page
-                Response.Redirect("~/Students.aspx");
+                Response.Redirect("~/Courses.aspx");
+
+
             }
         }
     }

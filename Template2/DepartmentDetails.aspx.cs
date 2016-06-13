@@ -11,7 +11,7 @@ using System.Web.ModelBinding;
 
 namespace Template2
 {
-    public partial class StudentDetails : System.Web.UI.Page
+    public partial class DepartmentDetails : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,33 +20,31 @@ namespace Template2
 
         protected void CancelButton_Click(object sender, EventArgs e)
         {
-            //redirect back to Students page
-            Response.Redirect("~/Students.aspx");
+            //redirect back to Departments page
+            Response.Redirect("~/Departments.aspx");
         }
 
         protected void SaveButton_Click(object sender, EventArgs e)
         {
-
             //use EF to connect to the server
-            using(DefaultConnection db = new DefaultConnection())
+            using (DefaultConnection db = new DefaultConnection())
             {
-                //use the Student model to create a new student object and 
+                //use the Course model to create a new course object and 
                 //save a new record
-                Student newStudent = new Student();
+                Department newDepartment = new Department();
 
-                //add data to the new Student record
-                newStudent.LastName = LastNameTextBox.Text;
-                newStudent.FirstMidName = FirstNameTextBox.Text;
-                newStudent.EnrollmentDate = Convert.ToDateTime(EnrollmentDateTextBox.Text);
-
+                //add data to the new Department record
+                newDepartment.Name = DepartmentTextBox.Text;
+                newDepartment.Budget = Convert.ToInt32(BudgetTextBox.Text);
+              
                 //use LINQ to ADO.net to add / insert my new Student into the DB
-                db.Students.Add(newStudent);
+                db.Departments.Add(newDepartment);
 
                 //save our changes
                 db.SaveChanges();
 
                 //redirect back to the updated Students page
-                Response.Redirect("~/Students.aspx");
+                Response.Redirect("~/Departments.aspx");
             }
         }
     }

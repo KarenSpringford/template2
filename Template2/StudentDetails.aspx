@@ -18,6 +18,7 @@
                     <label class="control-label" for="EnrollmentDateTextBox">Enrollment Date</label>
                     <asp:TextBox runat="server" TextMode="Date" CssClass="form-control" ID="EnrollmentDateTextBox" placeholder="Enrollment Date" required="true"></asp:TextBox>
                 </div>
+                <br />
                 <div class="text-right">
                     <asp:Button Text="Cancel" ID="CancelButton" CssClass="btn-warning btn-lg" runat="server" UseSubmitBehavior="false" CausesValidation="false" OnClick="CancelButton_Click"/>
                     <asp:Button Text="Submit" ID="SaveButton" CssClass="btn-primary btn-lg" runat="server" OnClick="SaveButton_Click"/>
